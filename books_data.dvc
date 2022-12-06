@@ -1,0 +1,5 @@
+outs:
+- md5: 838d4a4b39f8438a9d06f25640340b9f.dir
+  size: 39826620
+  nfiles: 6
+  path: books_data

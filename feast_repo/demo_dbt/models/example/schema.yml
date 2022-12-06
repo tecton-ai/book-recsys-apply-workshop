@@ -1,0 +1,39 @@
+
+version: 2
+
+models:
+  - name: bucketed_age
+    description: ""
+    columns:
+      - name: "user_id"
+        description: "The primary key for this table"
+        tests:
+          - not_null
+  - name: agg_user_features
+    description: ""
+    columns:
+      - name: "user_id"
+        description: "The primary key for this table"
+        tests:
+          - not_null
+  - name: agg_user_features_1d
+    description: ""
+    columns:
+      - name: "user_id"
+        description: "The primary key for this table"
+        tests:
+          - not_null
+  - name: agg_book_features
+    description: ""
+    columns:
+      - name: "isbn"
+        description: "The primary key for this table"
+        tests:
+          - not_null
+  - name: avg_book_category_ratings
+    description: ""
+    columns:
+      - name: "isbn"
+        description: "The primary key for this table"
+        tests:
+          - not_null

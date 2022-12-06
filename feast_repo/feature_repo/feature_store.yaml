@@ -1,0 +1,20 @@
+project: feast_repo
+# By default, the registry is a file (but can be turned into a more scalable SQL-backed registry)
+registry: s3://[INSERT YOUR BUCKET]/feast-registry.db
+# The provider primarily specifies default offline / online stores & storing the registry in a given cloud
+provider: aws
+offline_store: 
+  type: spark
+  spark_conf: # Note: pip install -U "databricks-connect"
+      spark.ui.enabled: "false"
+      spark.eventLog.enabled: "false"
+      spark.sql.catalogImplementation: "hive"
+      spark.sql.parser.quotedRegexColumnNames: "true"
+      spark.sql.session.timeZone: "UTC"
+online_store:
+  type: dynamodb
+  region: us-west-1
+batch_engine:
+  type: "spark.engine"
+  partitions: 10
+entity_key_serialization_version: 2
